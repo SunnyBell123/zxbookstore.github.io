@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>二手书商城注册页面</title>
+		<!--自适应手机宽度-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" /> 
+		<!--导入bootstrap-->
+		<link href="css/bootstrap/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet"/>
+		<script src="css/bootstrap/js/jquery/2.0.0/jquery.min.js"></script>
+		<script src="css/bootstrap/js/bootstrap/3.3.6/bootstrap.min.js"></script>
+		
+		<!-- 导入验证码js -->
+		<script src="js/check_js/gVerify.js"></script>
+
+		<!-- 导入自定义css -->
+		<link href="css/selfmade/Register.css" rel="stylesheet"/>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<!-- 登录框背景框-->
+			<div id="login_bg">
+				<!-- 退出按钮 -->
+				<a href="HomePage.html"><img src="img/icons/back.gif" id="drawback"/></a>
+				<!-- 登录框 -->
+				<div id="login_main"> 
+					<h1>注&emsp;册</h1>
+					<hr style="border:3 solid #3AAAF8" width="100%" size=3/>
+					<!-- 输入框组 -->
+					<form method="get" id="form">
+						<div id="register">
+							<label>输入账号：</label>
+							<input type="text" name="account" placeholder="  input your account" class="input"/>
+						</div>
+						<div id="register">
+							<label>输入密码：</label>
+							<input type="password" name="password" placeholder="password" class="input"/><br />
+						</div>
+						<div id="register">
+							<label>确认密码：</label>
+							<input type="password" name="password" placeholder="password" class="input"/><br />
+						</div>
+						<div id="register">
+							<label>输入昵称：</label>
+							<input type="text" name="password" placeholder="nickname" class="input"/><br />
+						</div>
+						<div id="register">
+							<label>输入电话：</label>
+							<input type="text" name="password" placeholder="tel-number" class="input"/><br />
+						</div>
+						<div id="register">
+							<label>输入邮箱：</label>
+							<input type="text" name="password" placeholder="email address" class="input"/><br />
+						</div>
+						<div id="register_check">
+							<div id="check_input">
+								<label>输入验证码：</label>
+								<input type="text" placeholder="check-code" class="check" id="verify" name="verify" required title="区分大小写"/>
+							</div>
+							<div id="check_num">
+								<div id="v_container"></div>
+							</div>
+						</div>
+						<div id="register_submit">
+							<div id="register_btn">
+								<a onclick="getFormInfo()">提&emsp;交</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<script>				
+		var verifyCode = new GVerify("v_container");
+				//获取表单信息
+				function getFormInfo(){
+					// alert(verifyCode.code);
+					// var form = document.getElementById("form");
+					var inputs = document.getElementsByTagName("input");
+					var account = inputs[0].value;
+					var password = inputs[1].value;
+					var checkPwd = inputs[2].value;
+					var nickname = inputs[3].value;
+					var tel = inputs[4].value;
+					var email = inputs[5].value;
+					var checkStr = inputs[6].value;
+					// alert(checkStr);
+					// 判断密码是否前后一致
+					/* var result = verifyCode.validate(checkStr);
+					alert(result); */
+					if(password != checkPwd){
+						alert("前后密码不一致，请重新输入！");
+					}else{
+						var result = verifyCode.validate(checkStr);
+						if(result == false){
+							alert(checkStr+" 校验错误 " +verifyCode.code);
+						}else{
+							localStorage.setItem("account",account); //将用户信息保存至本地
+							localStorage.setItem("password",password);
+							localStorage.setItem("nickname",nickname);
+							localStorage.setItem("tel",tel);
+							localStorage.setItem("email",email);
+							alert("注册成功！");
+							
+							location.href = "Login.html";
+						}
+					}
+				}
+				
+		</script>
+	</body>
+</html>

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<!--自适应手机宽度-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" /> 
+		<title>二手书商城用户页面</title>
+		
+		<!--导入bootstrap和JQuery-->
+		<link href="css/bootstrap/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet"/>
+		<script src="css/bootstrap/js/bootstrap/3.3.6/bootstrap.min.js" rel="stylesheet"></script>
+		<script src="css/bootstrap/js/jquery/2.0.0/jquery.min.js" rel="stylesheet"></script>
+		
+		<!-- 弹窗 -->
+		<link rel="stylesheet" href="css/syalert/syalert.min.css" />
+		<script src="css/syalert/syalert.min.js"></script>
+		
+		<script src="js/selfmade/homepage.js"></script>
+		
+		<!-- 自定义css -->
+		<style type="text/css">
+			nav{
+				position: absolute;
+				height: 80px;
+				left: 0px;
+				right: 0px;
+				background-color: #007799;
+				z-index: 1000;
+			}
+			/*顶部标题*/
+			#nav_title_div{
+				position: absolute;
+				left: 136px;
+				top: 5px;
+				bottom: 5px;
+				right: 1000px;
+				/*background-color: red;*/
+			}
+			#nav_title_div_img{
+				position: absolute;
+				width: 30%;
+				height: 100%;
+				margin-left: 0px;
+			}
+			h1{
+				font-family: 华文新魏;
+				font-weight:bold ;
+				font-size: 40px;
+				margin-left: 150px;
+				margin-top: 20px;
+				color: #8B8878;
+			}
+			#bread_nav{
+				position: absolute;
+				width: 100%;
+				top: 80px;
+			}
+			a:hover{
+				text-decoration: none;
+			}
+			a:active{
+				text-decoration: none;
+			}
+			#user_main{
+				position: absolute;
+				top: 112px;
+				background: #007799;
+				width: 100%;
+				height: 640px;
+			}
+			#wrap{
+				position: absolute;
+				top: 27px;
+				bottom: 27px;
+				left: 268px;
+				right: 268px;
+				background: url(img/bigimg/dusk.jpg) no-repeat;
+				background-size: 100% 100%;
+				border-radius: 10px;
+			}
+			#verticle_info{
+				position:  absolute;
+				top: 20px;
+				bottom: 20px;
+				width: 20%;
+				left: 20px;
+				text-align: center;
+				background: rgb(83,134,139,0.5);
+			}
+			#remove_cart{
+				position: absolute;
+				top: 20px;
+				width: 70%;
+				right: 30px;
+				height: 15%;
+				text-align: center;
+				background: rgb(255,64,64,0.5);
+			}
+			#book_list{
+				position: absolute;
+				bottom: 20px;
+				right: 30px;
+				height: 75%;
+				width: 70%;
+				overflow: scroll;
+				background: rgb(0,0,0,0.5);
+			}
+			.file {
+			    position: relative;
+			    display: inline-block;
+				width: 80px;
+				height: 80px;
+				top: 20px;
+			    background: url(img/icons/defualt_head.png);
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+			    border: 1px solid #99D3F5;
+			    border-radius: 60px;
+			    padding: 4px 12px;
+			    overflow: hidden;
+			    color: #1E88C7;
+			    text-decoration: none;
+			    text-indent: 0;
+			    line-height: 20px;
+			}
+			.file input {
+			    position: absolute;
+			    font-size: 100px;
+			    right: 0;
+			    top: 0;
+			    opacity: 0;
+			}
+			.file:hover {
+			    background: #AADFFD;
+			    border-color: #78C3F3;
+			    color: #004974;
+			    text-decoration: none;
+			}
+			.list-extra{
+				position: relative;
+				top: 50px;				
+			}
+			p{
+				text-align: left;
+			}
+			#delete-cart{
+				position: relative;
+				width: 80px;
+				height: 80px;
+				/* top: 10px; */
+				vertical-align: center;
+			}
+			.display-list{
+				position: relative;
+				top: 10px;		
+				width: 640px;
+				height: 100px;
+				opacity: 0.5;
+				border-radius: 20px;
+				background: white;
+			}
+			.cut-line{
+				position: relative;
+				/* left: -100px; */
+				width: 600px;
+				height: 5px;
+				opacity: 0;
+				background: black;
+			}
+			.book-img{
+				position: absolute;
+				width: 15%;
+				left: 3%;
+				top: 5%;
+				height: 90%;
+			}
+			.book-name{
+				position: absolute;
+				left: 20%;
+				top: 10px;
+				font-family: 楷体;
+				font-size: 20px;
+			}
+			
+			.book-author{
+				position: absolute;
+				left: 20%;
+				top: 40px;
+				font-family: 楷体;
+				font-size: 20px;
+			}
+			.book-price{
+				position: absolute;
+				left: 20%;
+				top: 70px;
+				font-family: 楷体;
+				font-size: 20px;
+			}
+			/* //			alert(window.innerWidth); ：1536px */
+			/* //          alert(window.innerHeight);: 754px */
+		</style>
+	</head>
+	<body>
+		<!--头部-->
+		<nav class="navbar navbar-fixed-top">
+			<!--标题-->
+			<div id="nav_title_div">
+				<img src="img/icons/bookiocn.png" class="img-rounded" id="nav_title_div_img"/>
+				<h1>二手书商城</h1>
+			</div>
+		</nav>
+		<!-- 面包屑导航 -->
+		<div id="bread_nav">
+			<ol class="breadcrumb">
+			  <li><a href="HomePage.html">商城首页</a></li>
+			  <li class="active">个人信息 </li>
+			</ol>
+		</div>
+		<!-- 主界面 -->
+		<div id="user_main">
+			<div id="wrap"> 
+			<!-- οnfοcus='if(this.value=="请输入关键字进行搜索"){this.value="";}; '   
+			
+			     οnblur='if(this.value==""){this.value="请输入关键字进行搜索";};' -->
+				<div id="verticle_info"> 
+					<a href="" class="file" title="请选择头像">
+						<input type="file" name="head_img" id="headImg"/>
+					</a>
+					<div class="list-group list-extra">
+						<p class="list-group-item list-group-item-info">account</p><br />
+						<p class="list-group-item list-group-item-info">nickname</p><br />
+						<p class="list-group-item list-group-item-info">tel</p><br />
+						<p class="list-group-item list-group-item-info">eamil</p>
+					</div>
+					<!-- 上传书籍 -->
+					<button class="btn btn-primary" style="position: relative; top: 80px; width: 120px;" onClick="syalert.syopen('alert4')">上传书籍</button>
+					
+					<!-- 自定义弹窗 -->
+					<div class="sy-alert sy-alert-model animated" sy-enter="zoomIn" sy-leave="zoomOut" sy-type="confirm" sy-mask="true" id="alert4">
+						<div class="sy-title">书籍上传</div>
+							<div class="sy-content">
+								<div class="input-group input-group">
+								  <span class="input-group-addon" id="basic-addon1">封面：</span>
+								  <input type="file" class="form-control">
+								</div>
+								<div class="input-group input-group">
+								  <span class="input-group-addon" id="basic-addon1">书名：</span>
+								  <input type="text" class="form-control" aria-describedby="basic-addon1" id="bookName">
+								</div>
+								<div class="input-group input-group">
+								  <span class="input-group-addon" id="basic-addon1">作者：</span>
+								  <input type="text" class="form-control" aria-describedby="basic-addon1" id="bookAuthor">
+								</div>
+								<div class="input-group input-group">
+								  <span class="input-group-addon" id="basic-addon1">价格(￥)：</span>
+								  <input type="text" class="form-control" aria-describedby="basic-addon1" id="bookPrice">
+								</div>
+								<!-- <label>封面：</label><input type="file" class="form-control" id="bookImg" /> -->
+								<!-- <label>书名：</label><input type="text" class="form-control" id="bookName"/> -->
+								<!-- <label>作者：</label><input type="text" class="form-control" id="bookAuthor"/> -->
+								<!-- <label>价格(￥)：</label><input type="text" class="form-control" id="bookPrice"/> -->
+								<div class="panel-title">书籍简介</div>
+								<textarea  class="form-control" placeholder="关于书籍的一些信息" id="bookSummary"></textarea>
+							</div> 
+						<div class="sy-btn">
+					    <button id="cancel">取消</button>
+					    <button id="sure">确定</button>
+					  </div> 
+					</div>
+				</div>
+				<div id="remove_cart" ondragover="allowDrop(event)" ondrop="drop(event)">
+					<!-- 从购物车取消 -->
+					<img src="img/icons/delete-cart.gif" id="delete-cart" />
+				</div>
+				<div id="book_list">
+					<ul id="display-ul">
+						<!-- <li class="display-list">
+							<img src="img/books/三体.jpg" class="book-img" />
+							<span class="book-name">书名：《三体》</span>
+							<span class="book-author">作者：刘慈欣</span>
+							<span class="book-price book_font">价格(￥)：39</span>
+						</li>
+						<div class="cut-line"></div> -->
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script>
+			
+			//上传头像
+			$("input[type='file']").on('change', function () {
+			    var resultFile = document.getElementById("headImg").files[0];
+				if (resultFile) {
+					var reader = new FileReader();
+					reader.readAsDataURL(resultFile);
+					reader.onload = function (e) {
+					    var urlData = this.result;
+						document.getElementById("headImg").parentNode.style.background = "url(" +urlData+ ") 100% 100% no-repeat";
+						// document.getElementById("headImg").parentNode.style.background-size = "100% 100%";
+					    document.getElementById("result").innerHTML += "<img src='" + urlData + "' alt='" + resultFile.name + "' />";
+					}; 
+				}
+			});
+			
+			
+			//给信息栏添加数据
+			//获取信息栏
+			var items = document.getElementsByTagName("p");
+			$(document).ready(function(){
+				items[0].innerText = "账号：" +localStorage.getItem("account");
+				items[1].innerText = "昵称：" +localStorage.getItem("nickname");
+				items[2].innerText = "电话：" +localStorage.getItem("tel");
+				items[3].innerText = "邮箱：" +localStorage.getItem("email");
+			});
+			
+			//取消书籍上传
+			$("#cancel").on("click",function(){
+				syalert.syhide('alert4')
+			});
+			
+			//确定书籍信息上传
+			$("#sure").on("click",function(){
+				var bookName = document.getElementById("bookName").value;
+				var bookAuthor = document.getElementById("bookAuthor").value;
+				var bookPrice = document.getElementById("bookPrice").value;
+				var bookSummary = document.getElementById("bookSummary").value;
+					
+				if(bookName == "" || bookAuthor=="" ||bookPrice==""){
+					alert("请输入完整书籍信息！");
+				}else{
+				    var book = new Book(bookName,bookAuthor,bookPrice,bookSummary);
+				    // localStorage.setItem(bookName+ ".display",JSON.stringify(book));
+					alert("书籍上传成功！");
+					syalert.syhide('alert4')
+				}
+				
+			});
+			
+			// draggable="true" ondragstart="drag(event)" id="201912"
+			function load(){
+				// alert("页面加载成功！");
+				for (var i = 0; i < localStorage.length; i++) {
+					var key = localStorage.key(i); //获取本地存储的Key
+					if(key.indexOf(".cart") != -1){
+						var book = JSON.parse(localStorage.getItem(key));
+						//创建元素
+						var li = document.createElement("li");
+						li.id = book.name;
+						li.className = "display-list";
+						li.ondragable = true;
+						// li.ondragstart
+						li.addEventListener("dragstart",function(event){
+							drag(event);
+						},false);
+						// li
+						
+						var start = book.name.indexOf("《");
+						var end = book.name.indexOf("》");
+						var imgName = "img/books/" +book.name.substring(start+1,end)+ ".jpg";
+						var img = document.createElement("img");
+						img.className = "book-img";
+						img.src = imgName;
+						li.appendChild(img);
+						
+						var nameSpan = document.createElement("span");
+						nameSpan.innerText = book.name;
+						nameSpan.className = "book-name";
+						li.appendChild(nameSpan);
+						
+						var authorSpan = document.createElement("span");
+						authorSpan.innerText = book.author;
+						authorSpan.className = "book-author";
+						li.appendChild(authorSpan);
+						
+						var priceSpan = document.createElement("span");
+						priceSpan.innerText = book.price;
+						priceSpan.className = "book-price";
+						li.appendChild(priceSpan);
+						
+						var parent = document.getElementById("display-ul");
+						parent.appendChild(li);
+						
+						var divCut = document.createElement("div");
+						divCut.className = "cut-line";
+						parent.appendChild(divCut);
+					}
+				}
+			}
+			$(document).ready(function(){  
+			    load();
+			});  
+			
+			//设置拖放时传递的元素内容
+			function drag(event){
+				event.dataTransfer.effectAllowed = "copy";
+				//设置传递内容为被拖拽元素的id名,数据类型为纯文本
+				event.dataTransfer.setData("text/plain",event.target.id);
+				// console.log(event.target.id);
+			}
+			
+			//设置当前元素为可拖放区域
+			function allowDrop(event){
+				event.preventDefault();
+			}
+			
+			function drop(event){
+				event.preventDefault();
+				//获取被拖放元素的id
+				var id = event.dataTransfer.getData("text");
+				var end = id.indexOf("》");
+				var temp = id.substring(0,end+1);
+				var li = document.getElementById(id);
+				console.log(li);
+				localStorage.removeItem(id+ ".cart");
+				location.reload();
+				alert("移除成功！");
+			}
+			
+			//js获取项目根路径，如： http://localhost:8083/uimcardprj
+			/* function getRootPath(){
+				//获取当前网址，如： http://localhost:8083/uimcardprj/share/meun.jsp
+				var curWwwPath=window.document.location.href;
+				//获取主机地址之后的目录，如： /uimcardprj/share/meun.jsp
+				var pathName=window.document.location.pathname;
+				var pos=curWwwPath.indexOf(pathName);
+				//获取主机地址，如： http://localhost:8083
+				var localhostPaht=curWwwPath.substring(0,pos);
+				//获取带"/"的项目名，如：/uimcardprj
+				var projectName=pathName.substring(0,pathName.substr(1).indexOf('/')+1);
+				return(localhostPaht+projectName+ "/img/head.png");
+			} */
+		</script>
+	</body>
+</html>

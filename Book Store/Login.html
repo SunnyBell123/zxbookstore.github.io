@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>二手书商城登录页面</title>
+		<meta charset="utf-8" />
+		<!--自适应手机宽度-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" /> 
+		<!--导入bootstrap-->
+		<link href="css/bootstrap/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet"/>
+		<script src="css/bootstrap/js/jquery/2.0.0/jquery.min.js"></script>
+		<script src="css/bootstrap/js/bootstrap/3.3.6/bootstrap.min.js"></script>
+		
+		<!-- 导入按钮样式 -->
+		<link href="css/button_css/base.css" rel="stylesheet"/>
+		<link href="css/button_css/buttons.css" rel="stylesheet"/>
+		<link href="css/button_css/normalize.css" rel="stylesheet"/>
+		<link href="css/button_css/vicons-font.css" rel="stylesheet"/>
+		
+		<!-- 导入自定义css -->
+		<link href="css/selfmade/Login.css" rel="stylesheet" />
+		<style type="text/css">
+			/* width:1536px 
+			   height:754px
+			*/
+		</style>
+	</head>
+	<body background>
+		<div id="container">
+			<!-- 登录框背景框-->
+			<div id="login_bg">
+				<!-- 退出按钮 -->
+				<a onclick="backToOld()"><img src="img/icons/back.gif" id="drawback"/></a>
+				<!-- 登录框 -->
+				<div id="login_main"> 
+					<h1>登&emsp;录</h1>
+					<hr style="border:3 solid #3AAAF8" width="100%" size=3/>
+					<!-- 输入框组 -->
+					<form>
+						<div id="login_input">
+							<label>账号：</label>
+							<input type="text" name="account" placeholder="  input your account" class="input"/>
+						</div>
+						<div id="login_pwd">
+							<label>密码：</label>
+							<input type="password" name="password" placeholder="password" class="input"/><br />
+						</div>
+						<div class="container" id="login_btn">
+							<div class="content">
+								<button class="button button--tamaya button--round-l button--text-thick button--border-medium button--text-upper button--size-s button--inverted" data-text="登录" id="login"><span><a onclick="login()">登录</a></span></button>
+								<button class="button button--tamaya button--round-l button--text-thick button--border-medium button--text-upper button--size-s button--inverted" data-text="注册" id="register"><span><a href="Register.html">注册</a></span></button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			function login(){
+			// 获取session里面的值
+			var account = localStorage.getItem("account");
+			var password = localStorage.getItem("password");
+			if(account == null || password == null){
+				alert("您还未注册！");
+			}else{
+				var inputs = document.getElementsByTagName("input");
+				if(inputs[0].value == account && password == inputs[1].value){
+					alert("登录成功！");
+					backToOld();
+				}else{
+				    alert("请正确输入账户或者密码！");
+				}
+			}
+			}
+			
+			function backToOld(){
+				window.location.href = "HomePage.html";
+				window.event.returnValue = false;
+			}
+			
+		</script>
+	</body>
+</html>

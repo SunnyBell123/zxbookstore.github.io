@@ -1,0 +1,285 @@
+/*顶部样式*/
+			nav{
+				position: absolute;
+				height: 80px;
+				left: 0px;
+				right: 0px;
+				background-color: #007799;
+				z-index: 1000;
+			}
+			
+			/*顶部标题*/
+			#nav_title_div{
+				position: absolute;
+				left: 136px;
+				top: 5px;
+				bottom: 5px;
+				right: 1000px;
+				/*background-color: red;*/
+			}
+			#nav_title_div_img{
+				position: absolute;
+				width: 30%;
+				height: 100%;
+				margin-left: 0px;
+			}
+			h1{
+				font-family: 华文新魏;
+				font-weight:bold ;
+				font-size: 40px;
+				margin-left: 150px;
+				margin-top: 20px;
+				color: #8B8878;
+			}
+			
+			/*顶部搜索框*/
+			#nav_search_div{
+				position: absolute;
+				left: 636px;
+				right: 480px;
+				top:30px;
+			}
+			
+			/*顶部登录按钮组*/
+			#nav_login_div{
+				position: absolute;
+				right: 136px;
+				left: 1200px;
+				top: 20px;
+				height: 43px;
+				/*background-color: red;*/
+				vertical-align: center;
+				overflow: hidden;
+			}
+			#nav_login_div_img{
+				position: absolute;
+				width: 38px;
+				height: 38px;
+				display: block;
+				margin-left: 130px;
+				margin-top: -5px;
+			}
+			.nav_a{
+				position: absolute;
+				font-family: 微软雅黑;
+				font-size: 20px;
+				color: #BBBB00;
+				text-decoration: none;
+				display: block;
+				text-align: center;
+				margin-top: 10px;
+			}
+			a:hover{
+				text-decoration: none;
+			}
+			#login{
+				width: 60px;
+				height: 100%;
+				border-right:2px solid #8B8878;
+			}
+			#register{
+				width: 60px;
+				height: 100%;
+				margin-left: 60px;
+			}
+			/*顶部样式*/
+			
+			/*中间样式*/
+			/*分类导航栏*/
+			#center{
+				position: absolute;
+				top: 80px;
+				left: 0px;
+				right: 0px;
+				height: 674px;
+				/*background-color: green;*/
+			}
+			#center_nav{
+				position: absolute;
+				left: 0px;
+				right: 0px;
+				height: 50px;
+				/*background-color: red;*/
+			}
+			.center_nav_a{
+				font-size: 30px;
+				font-family: 华文行楷;
+			}
+			#center_banner{
+				position: absolute;
+				left: 0px;
+				right: 0px;
+				top: 50px;
+				bottom: 0px;
+				background-color: blue;
+			}
+			#center_iframe{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				/*624px*/
+			}
+			/**/
+			
+			/*商品陈列样式*/
+			#displays{
+				position: absolute;
+				top: 754px;
+				left: 0px;
+				right: 0px;
+				height: 674px;
+			}
+			#displays_main{
+				position: absolute;
+				width: 90%;
+				height: 100%;
+				top: 0px;
+				left: 0px;
+				/* background: #0173B2; */
+			}
+			#displays_buy{
+				position: absolute;
+				width: 10%;
+				height: 100%;
+				right: 0;
+				top: 0;
+				background: rgb(0,205,205);
+			}
+			#cart{
+				position: relative;
+				left: 10%;
+				top: 40%;
+			}
+			#class_title{
+				position: absolute;
+				width: 100%;
+				height: 15%;
+				top: 0px;
+				left: 0px;
+				/* background-color: #8B8878; */
+				text-align: center;
+				vertical-align: center;
+			}
+			#lace{
+				position: absolute;
+				top: 70px;
+				width: 80%;
+				height: 40px;
+				background: url(../../img/icons/line~1.png) no-repeat;
+			    background-size: 100% 100%;
+				left: 120px;
+			}
+			.text {
+				font: 40px/1 Arial Rounded MT Bold;
+			  	text-transform: uppercase;
+				fill: none;
+				stroke-width: 1;
+				stroke-linejoin: round;
+				stroke-dasharray: 70 330;
+				stroke-dashoffset: 0;
+				animation: stroke 6s infinite;
+			}
+			.text:nth-child(5n + 1) {
+			    stroke: #9fa8da;
+			    animation-delay: -1.5s;
+			}
+			.text:nth-child(5n + 2) {
+			    stroke: #9fa8da;
+				animation-delay: -3s;
+			}
+			.text:nth-child(5n + 3) {
+				stroke: #7986cb;
+				animation-delay: -4.5s;
+			}
+			.text:nth-child(5n + 4) {
+			    stroke: #5c6bc0;
+				animation-delay: -6s;
+			}
+			.text:nth-child(5n + 5) {
+			    stroke: #3f51b5;
+				animation-delay: -7.5s;
+			}
+			@keyframes stroke {
+			    100% {
+				stroke-dashoffset: -400;
+			    }
+			}			
+			#back_top{
+				position: fixed;
+				width: 40px;
+				height: 40px;
+				right: 100px;
+				bottom: 60px;
+				border-radius: 25px;
+				background: #0077A2;
+				opacity: 0.5;
+				z-index: 100;
+			}
+			#displays_cart{
+				position: absolute;
+				background: #76EEC6;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 82%;
+				/* visibility: hidden; */
+			}
+			div.container div.row{
+			    margin:10px 0px;
+			     
+			}
+			div.container div.row div {
+			    border: 0px solid gray;
+				height: 256px;
+			}
+			div.book{
+				/* background: red; */
+				/* height: 80%; */
+				text-align: center;
+				
+			}
+			.book_font{
+				font-family: 楷体;
+				font-size: 18px;
+				font-weight: bold;
+				color: #0B0D19;
+			}
+			.book{
+				display: block;
+				width: 100%;
+				background: rgb(69,139,116,0.2);
+				text-align: left;
+				border-radius: 3px;
+				position: relative;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+			}
+			.book_img{
+				position: absolute;
+				width: 50%;
+				left: 20%;
+				height: 50%;
+				/* height: 30px; */
+			}
+            .book_title{
+				top: 50%;
+			}
+			.book_author{
+				top: 42%;
+			}
+			.book_price{
+				top: 42%;
+			}
+			.book_summary{
+				top: 36%;
+			}
+			.button_alert{
+				position: relative;
+				text-align: center;
+				left: 70%;
+				background-color: transparent;
+				border: 0px solid transparent;
+				outline: none;
+			}
+			

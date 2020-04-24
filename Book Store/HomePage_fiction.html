@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<!--自适应手机宽度-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" /> 
+		<title>二手书商城主页</title>
+		<!--导入bootstrap和JQuery-->
+		<link href="css/bootstrap/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet"/>
+		<script src="css/bootstrap/js/bootstrap/3.3.6/bootstrap.min.js" rel="stylesheet"></script>
+		<script src="css/bootstrap/js/jquery/2.0.0/jquery.min.js" rel="stylesheet"></script>
+		
+		<!--导航栏css和js-->
+		<link href="css/nav_css/style.css" rel="stylesheet"/>
+		<script src="js/nav_js/jquery.SuperSlide.2.1.js"></script>
+		<script src="js/nav_js/script.js"></script>
+		<script src="js/nav_js/jquery.min.js"></script>
+		
+		<!-- 标题特效 -->
+		<link href="css/title_css/d.css" rel="stylesheet" />
+		<script src="css/title_css/d.js"></script>
+		
+		<!-- 弹窗 -->
+		<link rel="stylesheet" href="css/syalert/syalert.min.css" />
+		<script src="css/syalert/syalert.min.js"></script>
+		
+		<!--浏览器宽度1536px-->
+		<!--自定义css-->
+		<link href="css/selfmade/HomePage.css" rel="stylesheet"/>
+		<!-- 自定义js -->
+		<script src="js/selfmade/homepage.js"></script>
+	</head>
+	<body>
+		<!--头部-->
+		<a name="top"></a>
+		<nav class="navbar navbar-fixed-top">
+			<!--标题-->
+			<div id="nav_title_div">
+				<img src="img/icons/bookiocn.png" class="img-rounded" id="nav_title_div_img"/>
+				<h1>二手书商城</h1>
+			</div>
+			<!--搜索框-->
+			<div id="nav_search_div">
+				<div class="input-group input-group-sm">
+				    <input type="text" class="form-control" placeholder="搜索书名、作者" />
+				    <span class="input-group-btn">
+					    <button type="button" class="btn btn-default" onclick="alertSearch()">
+							<span class="glyphicon glyphicon-search"></span>
+					    </button>
+				    </span>
+				</div>
+			</div>
+			<!--登录和注册-->
+			<div id="nav_login_div">
+				<a href="Login.html" class="nav_a" id="login">登录</a>
+				<a href="Register.html" class="nav_a" id="register">注册</a>
+				<a href="User.html" class="nav_a" ><img src="img/icons/user.png" class="img-circle" id="nav_login_div_img"/></a>
+			</div>
+		</nav>
+		<!--中间-->
+		<div id="center">
+			<!--导航栏-->
+			<nav id="center_nav">
+				<div class="head" style="background-color: #53868B;">
+					<div class="navbox">
+						<!--侧边菜单栏-->
+						<div class="sidenav" style="background-color: #53868B;">
+							<label><i></i>书籍分类</label>
+							<ul class="side">
+								<li>
+									<a href="#" class="center_nav_a"><i class="side_t icon1"></i>文学</a>
+                  					<div class="side_main">
+                     					<dl>
+                        					<dt><b>文学</b></dt>
+                        					<dd>
+                           						<a href="#cart">小说</a>
+                           						<a href='#'>散文随笔</a>
+                           						<a href='#'>诗词</a>
+                           						<a href='#'>传记</a>
+                           						<a href='#'>戏剧</a>
+                           						<a href='#'>杂文</a>
+                           						<a href='#'>网文</a>
+                           						<a href='#'>其他</a>
+                        					</dd>
+                     					</dl>
+                  					</div>
+								</li>
+								<li>
+									<a href="#" class="center_nav_a"><i class="side_t icon1"></i>杂志期刊</a>
+                  					<div class="side_main">
+                     					<dl>
+                        					<dt><b>杂志期刊</b></dt>
+                        					<dd>
+                           						<a href="#">学术</a>
+                           						<a href='#'>文艺</a>
+                           						<a href='#'>科普</a>
+                           						<a href='#'>小说</a>
+                           						<a href='#'>其他</a>
+                        					</dd>
+                     					</dl>
+                  					</div>
+								</li>
+								<li>
+									<a href="#" class="center_nav_a"><i class="side_t icon1"></i>历史</a>
+                  					<div class="side_main">
+                     					<dl>
+                        					<dt><b>历史</b></dt>
+                        					<dd>
+                           						<a href="#">中国古代</a>
+                           						<a href='#'>中国近现代</a>
+                           						<a href='#'>世界古代</a>
+                           						<a href='#'>世界近现代</a>
+                           						<a href='#'>其他</a>
+                        					</dd>
+                     					</dl>
+                  					</div>
+								</li>
+								<li>
+									<a href="#" class="center_nav_a"><i class="side_t icon1"></i>教材</a>
+                  					<div class="side_main">
+                     					<dl>
+                        					<dt><b>教材</b></dt>
+                        					<dd>
+                           						<a href="#">数学</a>
+                           						<a href='#'>英语</a>
+                           						<a href='#'>政治</a>
+                           						<a href='#'>计算机</a>
+                           						<a href='#'>金融</a>
+                           						<a href='#'>管理</a>
+                           						<a href='#'>法律</a>
+                           						<a href='#'>其他</a>
+                        					</dd>
+                     					</dl>
+                  					</div>
+								</li>
+								<li>
+									<a href="#" class="center_nav_a"><i class="side_t icon1"></i>教辅</a>
+                  					<div class="side_main">
+                     					<dl>
+                        					<dt><b>教辅</b></dt>
+                        					<dd>
+                           						<a href="#">考研</a>
+                           						<a href='#'>公务员</a>
+                           						<a href='#'>教师\会计</a>
+                           						<a href='#'>英语</a>
+                           						<a href='#'>计算机</a>
+                           						<a href='#'>其他</a>
+                        					</dd>
+                     					</dl>
+                  					</div>
+								</li>
+								<li>
+									<a href="#" class="center_nav_a"><i class="side_t icon1"></i>技术</a>
+                  					<div class="side_main">
+                     					<dl>
+                        					<dt><b>技术</b></dt>
+                        					<dd>
+                           						<a href="#">工业</a>
+                           						<a href='#'>设计</a>
+                           						<a href='#'>医学</a>
+                           						<a href='#'>科技</a>
+                           						<a href='#'>计算机</a>
+                           						<a href='#'>其他</a>
+                        					</dd>
+                     					</dl>
+                  					</div>
+								</li>
+								<li>
+									<a href="#" class="center_nav_a"><i class="side_t icon1"></i>外文</a>
+                  					<div class="side_main">
+                     					<dl>
+                        					<dt><b>外文</b></dt>
+                        					<dd>
+                           						<a href="#">英语</a>
+                           						<a href='#'>其他</a>
+                        					</dd>
+                     					</dl>
+                  					</div>
+								</li>
+							</ul>
+						</div>
+						<!--主菜单-->
+						<div class="nav headrg">
+            				<ul class="nav_pc">
+            					<li>
+                  					<a class="f_a a" href="HomePage.html#cart">最新上架</a>
+                  					<div class="s_navbox">
+                     					<div class="s_a"></div>
+                  					</div>
+               					</li>
+               					<li>
+                  					<a class="f_a a" href="#">联系我们</a>
+                  					<div class="s_navbox">
+                     					<div class="s_a"></div>
+                  					</div>
+               					</li>
+               					<li>
+                  					<a class="f_a a" href="#">用户留言</a>
+                  					<div class="s_navbox">
+                     					<div class="s_a"></div>
+                  					</div>
+               					</li>
+               					<li>
+                  					<a class="f_a a" href="#">关于我们</a>
+                  					<div class="s_navbox">
+                     					<div class="s_a"></div>
+                  					</div>
+               					</li>
+            				</ul>
+            			</div>
+					</div>
+				</div>
+			</nav>
+			<!--轮播图-->
+			<div id="center_banner">
+				<iframe id="center_iframe" src="Banner.html" scrolling="no"></iframe>
+			</div>
+	    </div>
+		<!-- 返回顶部 -->
+		<div id="back_top">
+			<a href="#top"><img src="img/icons/backtop.png" class="img-circle" width="40" height="40"/></a>
+		</div>
+	    <!--商品陈列 -->
+		<a href="cart"></a>
+	    <div id="displays">
+			<!-- 陈列部分 -->
+			<div id="displays_main"> 
+				<div id="class_title">
+					<!-- 类别标题 -->
+					<svg viewBox="0 0 600 300">
+					    <symbol id="id">
+							<text dy="2em" dx="18em">文&emsp;学&emsp;小&emsp;说</text>
+						</symbol>
+						<use class="text" xlink:href="#id"></use>
+						<use class="text" xlink:href="#id"></use>
+						<use class="text" xlink:href="#id"></use>
+						<use class="text" xlink:href="#id"></use>
+						<use class="text" xlink:href="#id"></use>
+					</svg>
+				</div> 
+				<div id="lace"></div>
+				<!-- 购物车部分 -->
+				<div id="displays_cart"> 
+					<div class="container">
+					    <div class="row">
+					        <div class="col-xs-2">
+								<div>
+									<img src="img/books/三体.jpg" class="book_img"/>
+									<span class="book book_title book_font">书名:《三体》</span><br />
+									<span class="book book_author book_font">作者:刘慈欣</span>
+									<span class="book book_font book_price">价格:￥49</span><br />
+									<button type="button" class="book btn btn-info book_summary" style="text-align: center;" title="显示简介" onclick="summaryClicked(this)">简介</button>
+								</div>
+							</div>
+					        <div class="col-xs-2 ">
+								<div>
+									<img src="img/books/白鹿原.jpg" class="book_img"/>
+									<span class="book book_title book_font">书名:《白鹿原》</span><br />
+									<span class="book book_author book_font">作者:陈忠实</span>
+									<span class="book book_font book_price">价格:￥31</span><br />
+									<button type="button" class="book btn btn-info book_summary" style="text-align: center;" title="显示简介" onclick="summaryClicked(this)">简介</button>
+								</div>
+							</div>
+					        <div class="col-xs-2 ">
+								<div>
+									<img src="img/books/斗罗大陆.jpg" class="book_img"/>
+									<span class="book book_title book_font">书名:《斗罗大陆》</span><br />
+									<span class="book book_author book_font">作者:唐家三少</span>
+									<span class="book book_font book_price">价格:￥22</span><br />
+									<button type="button" class="book btn btn-info book_summary" style="text-align: center;" title="显示简介" onclick="summaryClicked(this)">简介</button>
+								</div>
+							</div>
+							<div class="col-xs-2 ">
+								<div>
+									<img src="img/books/恶意.jpg" class="book_img"/>
+									<span class="book book_title book_font">书名:《恶意》</span><br />
+									<span class="book book_author book_font">作者:东野圭吾</span>
+									<span class="book book_font book_price">价格:￥29</span><br />
+									<button type="button" class="book btn btn-info book_summary" style="text-align: center;" title="显示简介" onclick="summaryClicked(this)">简介</button>
+								</div>
+							</div>
+							<div class="col-xs-2 ">
+								<div>
+									<img src="img/books/福尔摩斯探案集.jpg" class="book_img"/>
+									<span class="book book_title book_font">书名:《福尔摩斯探案集》</span><br />
+									<span class="book book_author book_font">作者:柯南.道尔</span>
+									<span class="book book_font book_price">价格:￥50</span><br />
+									<button type="button" class="book btn btn-info book_summary" style="text-align: center;" title="显示简介" onclick="summaryClicked(this)">简介</button>
+								</div>
+							</div>
+							<div class="col-xs-2 ">
+								<div>
+									<img src="img/books/活着.jpg" class="book_img"/>
+									<span class="book book_title book_font">书名:《活着》</span><br />
+									<span class="book book_author book_font">作者:余华 </span>
+									<span class="book book_font book_price">价格:￥14</span><br />
+									<button type="button" class="book btn btn-info book_summary" style="text-align: center;" title="显示简介" onclick="summaryClicked(this)">简介</button>
+								</div>
+							</div>
+					    </div>
+						<div class="row">
+						    <div class="col-xs-2 ">
+								<div>
+									<img src="img/books/霍比特人.jpg" class="book_img"/>
+									<span class="book book_title book_font">书名:《霍比特人》</span><br />
+									<span class="book book_author book_font">作者:[英]J.R.R. 托尔金 </span>
+									<span class="book book_font book_price">价格:￥33</span><br />
+									<button type="button" class="book btn btn-info book_summary" style="text-align: center;" title="显示简介" onclick="summaryClicked(this)">简介</button>
+								</div>
+							</div>
+						    <div class="col-xs-2 ">
+								<div>
+									<img src="img/books/长安十二时辰.jpg" class="book_img"/>
+									<span class="book book_title book_font">书名:《长安十二时辰》</span><br />
+									<span class="book book_author book_font">作者:马伯庸</span>
+									<span class="book book_font book_price">价格:￥40</span><br />
+									<button type="button" class="book btn btn-info book_summary" style="text-align: center;" title="显示简介" onclick="summaryClicked(this)">简介</button>
+								</div>
+							</div>
+						    <div class="col-xs-2 ">
+								<div>
+									<img src="img/books/流浪地球.jpg" class="book_img"/>
+									<span class="book book_title book_font">书名:《流浪地球》</span><br />
+									<span class="book book_author book_font">作者:刘慈欣 </span>
+									<span class="book book_font book_price">价格:￥13</span><br />
+									<button type="button" class="book btn btn-info book_summary" style="text-align: center;" title="显示简介" onclick="summaryClicked(this)">简介</button>
+								</div>
+							</div>
+							<div class="col-xs-2 ">
+								<div>
+									<img src="img/books/堂吉诃德.jpg" class="book_img"/>
+									<span class="book book_title book_font">书名:《堂吉诃德》</span><br />
+									<span class="book book_author book_font">作者:[西班牙]塞万提斯</span>
+									<span class="book book_font book_price">价格:￥37</span><br />
+									<button type="button" class="book btn btn-info book_summary" style="text-align: center;" title="显示简介" onclick="summaryClicked(this)">简介</button>
+								</div>
+							</div>
+							<div class="col-xs-2 ">
+								<div>
+									<img src="img/books/我们仨.jpg" class="book_img"/>
+									<span class="book book_title book_font">书名:《我们仨》</span><br />
+									<span class="book book_author book_font">作者:杨绛</span>
+									<span class="book book_font book_price">价格:￥15</span><br />
+									<button type="button" class="book btn btn-info book_summary" style="text-align: center;" title="显示简介" onclick="summaryClicked(this)">简介</button>
+								</div>
+							</div>
+							<div class="col-xs-2 ">
+								<div>
+									<img src="img/books/小王子.jpg" class="book_img"/>
+									<span class="book book_title book_font">书名:《小王子》</span><br />
+									<span class="book book_author book_font">作者:[法]圣.埃克絮佩里</span>
+									<span class="book book_font book_price">价格:￥10</span><br />
+									<button type="button" class="book btn btn-info book_summary" style="text-align: center;" title="显示简介" onclick="summaryClicked(this)">简介</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 购物车 -->
+			<div id="displays_buy">
+				<img src="img/icons/cart.png"  id="cart"/>
+			</div>
+		</div> 
+		<div class="sy-alert sy-alert-model animated" sy-enter="zoomIn" sy-leave="zoomOut" sy-type="confirm" sy-mask="true" id="alert">
+			<div class="sy-title">
+				书籍简介
+				<button class="button_alert" onclick="syalert.syhide('alert')"><span class="glyphicon glyphicon-remove"></span></button>
+			</div>
+			<div class="sy-content">
+				<div class="panel panel-info" id="panel_info_content">
+					<div class="panel-heading">xxx</div>
+					<div class="panel-heading">xxx</div>
+					<div class="panel-heading">xxx</div>
+					<div class="panel-title">介绍：</div>
+					<div class="panel-body">
+						《三体》是刘慈欣创作的系列长篇科幻小说，由《三体》、《三体Ⅱ·黑暗森林》、《三体Ⅲ·死神永生》组成，第一部于2006年5月起在《科幻世界》杂志上连载，第二部于2008年5月首次出版，第三部则于2010年11月出版。
+						作品讲述了地球人类文明和三体文明的信息交流、生死搏杀及两个文明在宇宙中的兴衰历程。其第一部经过刘宇昆翻译后获得了第73届雨果奖最佳长篇小说奖 
+					</div>
+				</div>
+			</div> 
+		</div>
+		<script type="text/javascript">
+//			alert(window.innerWidth); ：1536px
+//          alert(window.innerHeight);: 754px
+           
+		</script>
+	</body>
+</html>
